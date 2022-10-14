@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+'use strict';
+
+var extract = require('./');
+var fs = require('fs');
+
+if (process.argv.length < 4) {
+    console.log('Usage: mbtiles2geojsons <mbtiles path> <geojson folder path>');
+    return;
+}
+
+var mbtilesPath = process.argv[2];
+var geojsonPath = process.argv[3];
+
+extract(mbtilesPath, geojsonPath);
